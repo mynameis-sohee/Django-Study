@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'user',
-    'tweet'
+    'tweet',
 ]
 
 MIDDLEWARE = [
@@ -126,3 +126,6 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# mySpartaSns/settings.py : user에 usermodel을 auth로 설정해 쓴다는 의미
+AUTH_USER_MODEL = 'user.UserModel'

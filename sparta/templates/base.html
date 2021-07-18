@@ -42,6 +42,7 @@
             </ul>
         </div>
         <form class="form-inline my-2 my-lg-0">
+            {% if not user.is_authenticated %}
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="/sign-in"> Sign In <span class="sr-only"></span></a>
@@ -50,6 +51,18 @@
                     <a class="nav-link" href="/sign-up"> Sign Up <span class="sr-only"></span></a>
                 </li>
             </ul>
+            {% else %}
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item" disabled>
+                        <span class="nav-link">
+                            {{ user.username }} 님 반갑습니다!
+                        </span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout"> 로그아웃 </a>
+                    </li>
+                </ul>
+            {% endif %}
         </form>
     </div>
 </nav>
